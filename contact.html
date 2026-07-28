@@ -33,9 +33,9 @@
         <a href="about.html">About</a>
         <ul class="sub-menu">
           <li><a href="about.html">About WCiA Project</a></li>
-          <li><a href="about.html#product">About Our Cause-Related Product</a></li>
-          <li><a href="about.html#events">About Our Events</a></li>
-          <li><a href="about.html#roundtable">About WCiA Donors' Round Table</a></li>
+          <li><a href="product.html">About Our Cause-Related Product</a></li>
+          <li><a href="events.html">About Our Events</a></li>
+          <li><a href="roundtable.html">About WCiA Donors' Round Table</a></li>
         </ul>
       </li>
       <li><a href="mission-values.html">Mission &amp; Values</a></li>
@@ -58,7 +58,9 @@
   </button>
 </header>
 
-<section class="page-hero">
+<section class="page-hero" style="background:
+    linear-gradient(rgba(26,31,60,0.82), rgba(26,31,60,0.82)),
+    url('https://wciaproject.org/wp-content/uploads/2026/04/image_2026-04-16_161216673.png') center/cover no-repeat;">
   <div class="breadcrumb">GET IN TOUCH</div>
   <h1>Contact Us</h1>
   <p>We'd love to hear from you — whether you want to donate, partner with us, or simply learn more about the WCiA Project.</p>
@@ -91,31 +93,13 @@
           <div class="value" style="color:var(--text-dark); font-weight:600;">Net-Afrique Multiservices</div>
         </div>
       </div>
-
-      <hr style="border:none; border-top:1px solid var(--border); margin:24px 0;">
-      <p style="font-size:0.88rem; color:var(--text-body);">You can also follow us on social media for the latest news and updates from the WCiA Project.</p>
-      <div class="contact-socials" style="margin-top:16px;">
-        <a href="https://twitter.com/" target="_blank" rel="noopener" style="border-color:var(--border); color:var(--maroon);">𝕏</a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener" style="border-color:var(--border); color:var(--maroon);">f</a>
-        <a href="https://www.pinterest.com/" target="_blank" rel="noopener" style="border-color:var(--border); color:var(--maroon);">p</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="border-color:var(--border); color:var(--maroon);">◎</a>
-      </div>
     </div>
 
     <div class="form-card">
       <h3 style="margin-bottom:6px;">Send Us a Message</h3>
       <p style="color:var(--text-body); font-size:0.9rem; margin-bottom:24px;">Fill in the form below and we'll get back to you as soon as possible.</p>
 
-      <!--
-        FORM SETUP (required before this goes live):
-        1. Go to https://formspree.io and create a free account.
-        2. Create a new form and set its notification email to contact@wciaproject.org.
-        3. Formspree gives you an endpoint like https://formspree.io/f/xxxxabcd
-        4. Replace YOUR_FORMSPREE_ID below (in the form action URL) with that ID.
-        Until you do this, the form will show a friendly message asking the user
-        to email or call directly instead — it will not silently fail.
-      -->
-      <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/mrenjqwl" method="POST">
         <div class="form-row">
           <div class="form-field">
             <label for="fullname">Full Name *</label>
@@ -156,10 +140,11 @@
   </div>
 </section>
 
+
 <footer>
   <div class="footer-inner">
     <div class="footer-about">
-      <a href="index.html"><img src="https://wciaproject.org/wp-content/uploads/2020/09/white-wcia-e1668716219672-scaled.jpeg" alt="WCiA" style="height:48px; margin-bottom:20px;"></a>
+      <a href="index.html"><img src="https://wciaproject.org/wp-content/uploads/2020/09/wcia-logo.png" alt="WCiA" style="height:48px; margin-bottom:20px; filter:brightness(0) invert(1);"></a>
       <p>The World's Children in Africa (WCiA) Project is a child-focused social investment CSR initiative of Net-Afrique Multiservices.</p>
     </div>
     <div class="footer-contacts">
@@ -167,20 +152,14 @@
       <p>Plot 156 F-Line Ewet Housing Estate, Uyo, Nigeria.</p>
       <p>contact@wciaproject.org</p>
       <p>+234 706 251 8960</p>
-      <div class="socials">
-        <a href="https://twitter.com/" target="_blank" rel="noopener">𝕏</a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener">f</a>
-        <a href="https://www.pinterest.com/" target="_blank" rel="noopener">p</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener">◎</a>
-      </div>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="links">
-      <a href="#">Terms of use</a>
-      <a href="#">Privacy Policy</a>
+      <a href="terms.html">Terms of use</a>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
-    <div>Copyright © 2025 WCiA by Net-Afrique. All Rights Reserved.</div>
+    <div>Copyright &copy; 2026 WCiA by Net-Afrique. All Rights Reserved.</div>
   </div>
 </footer>
 
@@ -204,14 +183,6 @@
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
-
-    if (form.action.includes('YOUR_FORMSPREE_ID')) {
-      statusEl.style.color = 'var(--maroon)';
-      statusEl.textContent =
-        "This form isn't connected to an email service yet. Please email contact@wciaproject.org or call +234 706 251 8960 directly — see the setup note in the page source to finish wiring the form.";
-      return;
-    }
-
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     statusEl.textContent = '';

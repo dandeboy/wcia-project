@@ -2,44 +2,47 @@
 
 Static multi-page site rebuild for the World's Children in Africa (WCiA) Project.
 
-## Files
-- index.html — Home
-- about.html — About WCiA (mission narrative, cause-related product, events, donors' roundtable)
-- mission-values.html — Vision, Mission, Core Values
+## Pages
+- index.html — Home (rotating hero slider, "Explore WCiA" cards, latest news)
+- about.html — About WCiA Project (mission narrative + UNICEF statistics)
+- product.html — About Our Cause-Related Product (Children's Writing Companion)
+- events.html — About Our Events
+- roundtable.html — About WCiA Donors' Round Table
+- mission-values.html — Vision, Mission, Core Values, Our Approach
 - partnering.html — Ways to Partner / Support
-- donate.html — Donate page (Stripe + Paystack links wired in)
-- contact.html — Contact form + info
+- donate.html — Donate (Stripe + Paystack links wired in)
+- contact.html — Contact form + info (Formspree-connected)
+- terms.html — Terms of Use
+- privacy.html — Privacy Policy
 - style.css — Shared stylesheet for all pages
 
 ## How to publish
-This is a fully static site — no build step, no server-side code required.
-Upload all files (keeping them in the same folder, flat structure) to any of:
-- Netlify / Vercel (drag-and-drop the folder)
-- GitHub Pages
-- Your existing cPanel / shared hosting via FTP (upload into public_html)
-- Any static file host (S3 + CloudFront, Cloudflare Pages, etc.)
+Fully static site — no build step required. Upload all files (flat structure,
+same folder) to Netlify, GitHub Pages, or any static host. Make sure
+index.html sits at the root of wherever your domain points.
 
-Just make sure index.html sits at the root of wherever your domain points.
+## Contact form
+The contact form is wired to Formspree: https://formspree.io/f/mrenjqwl
+Submissions are emailed to whatever address is registered on that Formspree
+account. To change the destination email, log into formspree.io and update
+the form's notification settings — no code changes needed.
 
-## IMPORTANT: before the contact form works
-The contact form on contact.html is wired to use Formspree (a free, no-backend
-form-to-email service) but needs your own endpoint:
+## Images
+All images are pulled live from wciaproject.org's WordPress media library.
+This means:
+- No large image files bloat this download
+- If an image is ever removed/renamed on wciaproject.org, it will break here too
+- For full independence from the old site, download the images used and
+  update the <img src="..."> and background-image url("...") references to
+  point to local files instead
 
-1. Go to https://formspree.io and create a free account.
-2. Create a new form, and set its notification email to contact@wciaproject.org
-   (or whichever inbox should receive messages).
-3. Formspree will give you a form endpoint that looks like:
-   https://formspree.io/f/xxxxabcd
-4. Open contact.html, find this line near the form:
-   <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-   and replace YOUR_FORMSPREE_ID with your real Formspree ID.
+## Social media
+WCiA does not currently have confirmed, dedicated social media accounts
+(the links on the live site point to generic platform homepages, not WCiA's
+own profiles) — so no social icons are included here. Add them back in the
+footer of style.css / each page's <footer> once real accounts exist.
 
-Until that's done, submitting the form will show a message asking visitors to
-email or call directly instead of failing silently.
-
-## Other things to swap in before going fully live
-- Real photography (currently uses stock photos from Unsplash)
-- Real social media links (currently placeholder # links in the footer/contact page)
-- Terms of Use / Privacy Policy pages (currently placeholder # links)
-- Confirm the Stripe and Paystack donation links in donate.html still match your
-  live payment accounts.
+## Still using placeholder/example content
+- Bank transfer details (contact.html directs enquiries here — real account
+  details need to be added once available)
+- "Read Our Latest News" section — no news system yet, shows "coming soon"

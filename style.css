@@ -136,6 +136,7 @@ nav .sub-menu li a:hover{background:var(--cream); color:var(--maroon);}
 .hero-slide{
   position:absolute;
   inset:0;
+  background-color:var(--navy);
   background-size:cover;
   background-position:center;
   opacity:0;
@@ -193,6 +194,14 @@ nav .sub-menu li a:hover{background:var(--cream); color:var(--maroon);}
   background:var(--maroon);
   border-radius:50%;
 }
+
+/* Prose wrapper — keeps headings, paragraphs, and lists at one consistent
+   reading width so long-form pages never look misaligned section to section */
+.prose{max-width:800px;}
+.prose h2{font-size:1.5rem; margin:44px 0 16px;}
+.prose h2:first-child{margin-top:0;}
+.prose p{max-width:none;}
+.prose ul.bullets{max-width:none;}
 
 /* Why / stats grid (home) */
 .why-section{padding:90px 0;}

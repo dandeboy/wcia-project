@@ -33,33 +33,37 @@
         <a href="about.html">About</a>
         <ul class="sub-menu">
           <li><a href="about.html">About WCiA Project</a></li>
-          <li><a href="about.html#product">Our Cause-Related Product</a></li>
-          <li><a href="about.html#events">Our Events</a></li>
-          <li><a href="about.html#roundtable">Donors' Round Table</a></li>
+          <li><a href="product.html">About Our Cause-Related Product</a></li>
+          <li><a href="events.html">About Our Events</a></li>
+          <li><a href="roundtable.html">About WCiA Donors' Round Table</a></li>
         </ul>
       </li>
       <li><a href="mission-values.html">Mission &amp; Values</a></li>
-      <li><a href="donate.html" class="active">Donate</a></li>
+      <li class="has-sub">
+        <a href="partnering.html">Partnering</a>
+        <ul class="sub-menu">
+          <li><a href="partnering.html">Ways to Partner / Support</a></li>
+        </ul>
+      </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
   <div class="header-actions">
     <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <a href="#donate-methods" class="btn btn-maroon">Donate Now</a>
-    <a href="#gift" class="btn btn-outline-dark">Gift Product</a>
+    <a href="donate.html" class="btn btn-maroon">Donate Now</a>
+    <a href="donate.html#gift" class="btn btn-outline-dark">Gift Product</a>
   </div>
   <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" onclick="toggleMobileNav()">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">MAKE A DIFFERENCE TODAY</div>
-    <h1>Your Donation Changes a Child's Life</h1>
-    <p>Every contribution — no matter the size — helps fund education, nutrition, and welfare programmes for children across Africa.</p>
-    <a href="#donate-methods" class="btn btn-maroon">Donate Now</a>
-  </div>
+<section class="page-hero" style="background:
+    linear-gradient(rgba(26,31,60,0.7), rgba(26,31,60,0.5)),
+    url('https://wciaproject.org/wp-content/uploads/2025/07/IMG-20250701-WA0037.jpg') center 25%/cover no-repeat;">
+  <div class="breadcrumb">MAKE A DIFFERENCE TODAY</div>
+  <h1>Your Donation Changes a Child's Life</h1>
+  <p>Every contribution — no matter the size — helps fund education, nutrition, and welfare programmes for children across Africa.</p>
 </section>
 
 <section class="why-section">
@@ -184,7 +188,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-about">
-      <a href="index.html"><img src="https://wciaproject.org/wp-content/uploads/2020/09/white-wcia-e1668716219672-scaled.jpeg" alt="WCiA" style="height:48px; margin-bottom:20px;"></a>
+      <a href="index.html"><img src="https://wciaproject.org/wp-content/uploads/2020/09/wcia-logo.png" alt="WCiA" style="height:48px; margin-bottom:20px; filter:brightness(0) invert(1);"></a>
       <p>The World's Children in Africa (WCiA) Project is a child-focused social investment CSR initiative of Net-Afrique Multiservices.</p>
     </div>
     <div class="footer-contacts">
@@ -192,23 +196,16 @@
       <p>Plot 156 F-Line Ewet Housing Estate, Uyo, Nigeria.</p>
       <p>contact@wciaproject.org</p>
       <p>+234 706 251 8960</p>
-      <div class="socials">
-        <a href="#">𝕏</a>
-        <a href="#">f</a>
-        <a href="#">p</a>
-        <a href="#">◎</a>
-      </div>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="links">
-      <a href="#">Terms of use</a>
-      <a href="#">Privacy Policy</a>
+      <a href="terms.html">Terms of use</a>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
-    <div>Copyright © 2025 WCiA by Net-Afrique. All Rights Reserved.</div>
+    <div>Copyright &copy; 2026 WCiA by Net-Afrique. All Rights Reserved.</div>
   </div>
 </footer>
-
 
 <script>
   function toggleMobileNav() {
