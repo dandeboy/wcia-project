@@ -58,14 +58,41 @@
   </button>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">WE ARE CREATING A BRIGHTER TOMORROW</div>
-    <h1>Investing in Children Today Secures A Brighter Tomorrow for All</h1>
-    <div class="cta-buttons" style="justify-content:flex-start; margin-top:10px;">
-      <a href="donate.html" class="btn btn-maroon">Donate Now</a>
-      <a href="partnering.html" class="btn btn-outline-white">Become a Partner</a>
+<section class="hero-slider" id="hero-slider">
+  <div class="hero-slide active" style="background-image:url('https://wciaproject.org/wp-content/uploads/2023/04/Website-Cover-1-1-scaled.jpg');">
+    <div class="hero-inner">
+      <div class="eyebrow">WE ARE CREATING A BRIGHTER TOMORROW</div>
+      <h1>Investing in Children Today Secures A Brighter Tomorrow for All</h1>
+      <div class="cta-buttons" style="justify-content:flex-start; margin-top:10px;">
+        <a href="donate.html" class="btn btn-maroon">Donate Now</a>
+        <a href="partnering.html" class="btn btn-outline-white">Become a Partner</a>
+      </div>
     </div>
+  </div>
+  <div class="hero-slide" style="background-image:url('https://wciaproject.org/wp-content/uploads/2020/08/home-1_01-2.png');">
+    <div class="hero-inner">
+      <div class="eyebrow">255,300+ CHILDREN NEED SCHOOL</div>
+      <h1>Your Donation Changes a Child's Life</h1>
+      <div class="cta-buttons" style="justify-content:flex-start; margin-top:10px;">
+        <a href="donate.html" class="btn btn-maroon">Donate Now</a>
+        <a href="mission-values.html" class="btn btn-outline-white">Our Mission</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slide" style="background-image:url('https://wciaproject.org/wp-content/uploads/2025/07/IMG-20250701-WA0037.jpg');">
+    <div class="hero-inner">
+      <div class="eyebrow">MAKE A DIFFERENCE TODAY</div>
+      <h1>Every Contribution Helps Fund Education, Nutrition &amp; Welfare</h1>
+      <div class="cta-buttons" style="justify-content:flex-start; margin-top:10px;">
+        <a href="about.html" class="btn btn-maroon">About WCiA</a>
+        <a href="partnering.html" class="btn btn-outline-white">Become a Partner</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots" id="hero-dots">
+    <button class="active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+    <button onclick="goToSlide(1)" aria-label="Slide 2"></button>
+    <button onclick="goToSlide(2)" aria-label="Slide 3"></button>
   </div>
 </section>
 
@@ -158,7 +185,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-about">
-      <a href="index.html"><img src="https://wciaproject.org/wp-content/uploads/2020/09/wcia-logo.png" alt="WCiA" style="height:48px; margin-bottom:20px; filter:brightness(0) invert(1);"></a>
+      <a href="index.html"><img src="https://wciaproject.org/wp-content/uploads/2020/09/white-wcia-e1668716219672-scaled.jpeg" alt="WCiA" style="height:48px; margin-bottom:20px;"></a>
       <p>The World's Children in Africa (WCiA) Project is a child-focused social investment CSR initiative of Net-Afrique Multiservices.</p>
     </div>
     <div class="footer-contacts">
@@ -196,6 +223,36 @@
       }
     });
   });
+
+  // Hero slider
+  (function () {
+    const slides = document.querySelectorAll('#hero-slider .hero-slide');
+    const dots = document.querySelectorAll('#hero-dots button');
+    let current = 0;
+    let timer;
+
+    window.goToSlide = function (index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      resetTimer();
+    };
+
+    function nextSlide() {
+      goToSlide((current + 1) % slides.length);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(nextSlide, 6000);
+    }
+
+    if (slides.length > 1) {
+      resetTimer();
+    }
+  })();
 </script>
 </body>
 </html>
