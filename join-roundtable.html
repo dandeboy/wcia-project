@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donor's RoundTable — WCiA Project</title>
+<link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="partnering.html">Ways to Partner / Support</a>
+      <span>●</span>
+      <a href="partnering.html">List of Partners / Supporters</a>
+    </div>
+    <div class="topbar-right">
+      <span>Plot 156 F-Line Ewet Housing Estate, Uyo, Nigeria</span>
+      <span>+234 706 251 8960</span>
+    </div>
+  </div>
+</div>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="https://wciaproject.org/wp-content/uploads/2020/09/wcia-logo.png" alt="WCiA — World's Children in Africa Project">
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="has-sub">
+        <a href="about.html" class="active">About</a>
+        <ul class="sub-menu">
+          <li><a href="about.html">About WCiA Project</a></li>
+          <li><a href="product.html">About Our Cause-Related Product</a></li>
+          <li><a href="events.html">About Our Events</a></li>
+          <li><a href="roundtable.html">About WCiA Donors' Round Table</a></li>
+        </ul>
+      </li>
+      <li><a href="mission-values.html">Mission &amp; Values</a></li>
+      <li class="has-sub">
+        <a href="partnering.html">Partnering</a>
+        <ul class="sub-menu">
+          <li><a href="partnering.html">Ways to Partner / Support</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <a href="donate.html" class="btn btn-maroon">Donate Now</a>
+    <a href="donate.html#gift" class="btn btn-outline-dark">Gift Product</a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<section class="page-hero" style="background:
+    linear-gradient(rgba(26,31,60,0.82), rgba(26,31,60,0.82)),
+    url('https://wciaproject.org/wp-content/uploads/2026/04/image_2026-04-28_091717585.png') center/cover no-repeat;">
+  <div class="breadcrumb">GET INVOLVED</div>
+  <h1>Donor's RoundTable</h1>
+  <p>Let's set a unique world order, towards achieving equitable social investments in the world's vulnerable Children In Africa, and help them realize their potentials enough to become able to contribute to Africa's future and growth.</p>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px;">
+    <div class="form-card">
+      <h3 style="margin-bottom:6px;">Register Your Interest</h3>
+      <p style="color:var(--text-body); font-size:0.9rem; margin-bottom:24px;">Fill in the form below to join the WCiA Donors' RoundTable.</p>
+
+      <form id="roundtable-form" name="roundtable-registration" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="roundtable-registration">
+        <p style="display:none;">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="reg-type">Select Registration Type *</label>
+            <select id="reg-type" name="Registration Type" required style="width:100%; border:1px solid var(--border); border-radius:6px; padding:12px 14px; font-family:inherit; font-size:0.92rem; background:var(--white);">
+              <option value="">Click here to Select Type</option>
+              <option>Individual</option>
+              <option>Corporate</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="rt-name">Name *</label>
+            <input type="text" id="rt-name" name="Name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="rt-address">Address *</label>
+            <input type="text" id="rt-address" name="Address" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="rt-fixed">Telephone (Fixed) of contact person *</label>
+            <input type="tel" id="rt-fixed" name="Telephone (Fixed)" required>
+          </div>
+          <div class="form-field">
+            <label for="rt-mobile">Telephone (Mobile) of contact person *</label>
+            <input type="tel" id="rt-mobile" name="Telephone (Mobile)" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="rt-email">Email *</label>
+            <input type="email" id="rt-email" name="Email" required>
+          </div>
+          <div class="form-field">
+            <label for="rt-website">Company Website (optional)</label>
+            <input type="url" id="rt-website" name="Company Website" placeholder="https://">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="rt-file">Upload Donor Profile *</label>
+            <input type="file" id="rt-file" name="Donor Profile" accept=".pdf,.jpeg,.jpg,.png" required>
+            <p style="font-size:0.8rem; color:var(--text-body); margin-top:6px;">PDF, JPEG, PNG, or JPG only. Max file size 2GB.</p>
+          </div>
+        </div>
+
+        <p style="font-size:0.82rem; color:var(--text-body); margin:18px 0 20px; padding:14px 16px; background:var(--cream); border-radius:6px;">
+          <strong>Note:</strong> By providing the above information, you are expressing your interest to get listed as a stakeholder in the advancement of the welfare of the world's vulnerable children in Africa and to get invited to our summit and other relevant activities.
+        </p>
+
+        <button type="submit" id="rt-submit" class="btn btn-maroon" style="border:none; cursor:pointer; width:100%; text-align:center;">Submit Registration</button>
+        <p id="rt-status" style="margin-top:16px; font-size:0.88rem;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-about">
+      <a href="index.html"><img src="https://wciaproject.org/wp-content/uploads/2020/09/wcia-logo.png" alt="WCiA" style="height:48px; margin-bottom:20px; filter:brightness(0) invert(1);"></a>
+      <p>The World's Children in Africa (WCiA) Project is a child-focused social investment CSR initiative of Net-Afrique Multiservices.</p>
+    </div>
+    <div class="footer-contacts">
+      <h4>CONTACTS</h4>
+      <p>Plot 156 F-Line Ewet Housing Estate, Uyo, Nigeria.</p>
+      <p>contact@wciaproject.org</p>
+      <p>+234 706 251 8960</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="links">
+      <a href="terms.html">Terms of use</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div>Copyright &copy; 2026 WCiA by Net-Afrique. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  function toggleMobileNav() {
+    document.querySelector('nav').classList.toggle('open');
+    document.getElementById('menu-toggle').classList.toggle('open');
+  }
+  document.querySelectorAll('nav .has-sub > a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 960) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open-sub');
+      }
+    });
+  });
+
+  const form = document.getElementById('roundtable-form');
+  const statusEl = document.getElementById('rt-status');
+  const submitBtn = document.getElementById('rt-submit');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+    statusEl.textContent = '';
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        body: new FormData(form)
+      });
+
+      if (response.ok) {
+        statusEl.style.color = '#2e7d32';
+        statusEl.textContent = 'Thank you — your registration has been received. We will be in touch shortly.';
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      statusEl.style.color = 'var(--maroon)';
+      statusEl.textContent =
+        'Something went wrong submitting your registration. Please email contact@wciaproject.org directly.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Registration';
+    }
+  });
+</script>
+</body>
+</html>
