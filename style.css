@@ -107,25 +107,6 @@ nav .sub-menu li a:hover{background:var(--cream); color:var(--maroon);}
 .menu-toggle.open span:nth-child(2){opacity:0;}
 .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* Top bar (contact strip) */
-.topbar{
-  background:var(--navy);
-  color:#c7c9d6;
-  font-size:0.8rem;
-}
-.topbar-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:8px 32px;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:8px;
-}
-.topbar a{color:#c7c9d6;}
-.topbar-left{display:flex; gap:20px; flex-wrap:wrap;}
-.topbar-right{display:flex; gap:14px;}
-
 /* Hero slider (home) */
 .hero-slider{
   position:relative;
@@ -279,6 +260,11 @@ nav .sub-menu li a:hover{background:var(--cream); color:var(--maroon);}
 /* Values grid (mission page) */
 .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:10px;}
 .value-card{background:var(--white); border:1px solid var(--border); border-radius:8px; padding:30px 26px;}
+.value-icon{
+  width:48px; height:48px; background:var(--maroon); border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--white); font-size:1.3rem; margin-bottom:18px;
+}
 .value-card .num{color:var(--amber); font-weight:800; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px;}
 .value-card h3{font-size:1.15rem; margin-bottom:10px;}
 .value-card p{color:var(--text-body); font-size:0.92rem; margin-bottom:0;}
@@ -436,7 +422,6 @@ footer{background:var(--navy-2); color:#c7c9d6; padding:60px 32px 0;}
   .funds-image img{height:320px;}
   .footer-bottom{flex-direction:column; gap:14px; text-align:center;}
   .cta-buttons{flex-direction:column; align-items:center;}
-  .topbar-inner{flex-direction:column; align-items:flex-start;}
 
   .section{padding:60px 0;}
   .why-section{padding:60px 0;}
@@ -449,8 +434,6 @@ footer{background:var(--navy-2); color:#c7c9d6; padding:60px 32px 0;}
   .container{padding:0 18px;}
   header{padding:14px 18px;}
   .logo img{height:36px;}
-  .topbar-inner{padding:8px 18px;}
-  .topbar-inner{font-size:0.72rem;}
 
   .hero-slider{min-height:420px;}
   .hero-inner{padding:44px 18px;}
