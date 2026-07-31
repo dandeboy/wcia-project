@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Our Events — WCiA Project</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -54,16 +54,18 @@
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="prose">
-      <p>UNICEF works in over 190 countries and territories to protect the rights of every child, reaching the most disadvantaged children and adolescents. WCiA shares that same commitment.</p>
-      <p>Through events, summits, and sensitization drives, we mobilize investment to help counter the anticipated shift in the world's child population toward Africa — and the risks that shift carries for the continent's most vulnerable children.</p>
-      <p>Every WCiA event is a response to the United Nations' call for private sector participation in advancing the Sustainable Development Goals across Africa.</p>
+  <div class="container" style="max-width:900px;">
+    <div class="info-box reveal">
+      <div class="info-box-icon">🧭</div>
+      <div class="info-box-body">
+        <div class="label">Our Poise</div>
+        <p>Because it is important that a multi polar world needs be led by a multiplicity of institutions; and considering the landscape of charity and philanthropy in international development and humanitarian assistance, WCiA is poised to lend a hand, from time to time, through events, to sensitize and mobilize investments to help mitigate the consequences of the huge shift in the world's child population towards Africa, and its negative potentials, as a response to the United Nations call for private sector participation towards the realization of the sustainable development goals initiative in Africa.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="cta-banner reveal">
   <div class="eyebrow">MAKE A DIFFERENCE TODAY</div>
   <h2>Ready to Invest in Africa's Children?</h2>
   <p>Reach out to us today and we will guide you through the donation process. Every penny counts.</p>
@@ -107,6 +109,24 @@
       }
     });
   });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  (function () {
+    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(t => t.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(t => observer.observe(t));
+  })();
 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donate — WCiA Project</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -53,7 +53,7 @@
   <p>Every contribution — no matter the size — helps fund education, nutrition, and welfare programmes for children across Africa.</p>
 </section>
 
-<section class="why-section">
+<section class="why-section reveal">
   <div class="container why-grid">
     <div class="why-left">
       <div class="why-badge">WCiA</div>
@@ -79,7 +79,7 @@
   </div>
 </section>
 
-<section class="funds-section">
+<section class="funds-section reveal">
   <div class="container funds-grid">
     <div class="funds-image">
       <img src="https://wciaproject.org/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-07-at-12.12.40-1024x687.jpeg" alt="WCiA children's writing companion in use">
@@ -120,12 +120,12 @@
   </div>
 </section>
 
-<section class="how-section" id="donate-methods">
+<section class="how-section reveal" id="donate-methods">
   <div class="container">
     <div class="eyebrow">GETTING STARTED</div>
     <h2>How to Donate</h2>
     <p>We make donating simple, safe, and transparent. Choose the method that works best for you.</p>
-    <div class="how-grid">
+    <div class="how-grid reveal-group">
       <div class="how-card">
         <div class="how-icon">🏦</div>
         <h3>Bank Transfer</h3>
@@ -148,7 +148,7 @@
   </div>
 </section>
 
-<section class="section section-cream" id="gift">
+<section class="section section-cream reveal" id="gift">
   <div class="container funds-grid" style="align-items:center;">
     <div>
       <div class="eyebrow" style="color:var(--amber);">CAUSE-RELATED PRODUCT</div>
@@ -162,7 +162,7 @@
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="cta-banner reveal">
   <div class="eyebrow">MAKE A DIFFERENCE TODAY</div>
   <h2>Ready to Invest in Africa's Children?</h2>
   <p>Reach out to us today and we will guide you through the donation process. Every penny counts.</p>
@@ -206,6 +206,24 @@
       }
     });
   });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  (function () {
+    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(t => t.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(t => observer.observe(t));
+  })();
 </script>
 </body>
 </html>

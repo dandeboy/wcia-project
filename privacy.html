@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — WCiA Project</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -51,7 +51,7 @@
   <p>Effective Date: May 03, 2025</p>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <div class="container">
     <div class="prose">
       <p>Thank you for your interest in joining forces with others to reduce Africa's risk of experiencing ever-widening disparity among its children. At the <strong>World's Children in Africa (WCiA) Project</strong> — a child-focused social investment CSR initiative of Net-Afrique Multiservices — we are committed to protecting your privacy and ensuring that your personal information is handled responsibly.</p>
@@ -165,6 +165,24 @@
       }
     });
   });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  (function () {
+    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(t => t.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(t => observer.observe(t));
+  })();
 </script>
 </body>
 </html>

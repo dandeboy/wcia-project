@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About WCiA Donors' Round Table — WCiA Project</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -54,28 +54,50 @@
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="prose">
-      <p style="border-left:3px solid var(--amber); padding-left:20px; font-style:italic; font-size:1.15rem; font-weight:500; color:var(--text-dark);">
-        "It Takes Two Flints To Make A Fire"<br>
-        <span style="font-size:0.95rem; font-weight:400; color:var(--text-body);">— Louisa May Alcott</span>
-      </p>
+  <div class="container" style="max-width:900px;">
 
-      <p>Charitable initiatives survive primarily on donations, and private philanthropy is now a growing source of funding for international projects, with the landscape of local/international development assistance changing significantly – with the private/corporate sector support to development and humanitarian assistance being found to be increasingly important within this changing landscape, even as this support has been in decline – in spite of their capacities to immensely contribute to development and humanitarian assistance in a more effective way.</p>
+    <p style="border-left:3px solid var(--amber); padding-left:20px; font-style:italic; font-size:1.15rem; font-weight:500; color:var(--text-dark); margin-bottom:40px;" class="reveal">
+      "It Takes Two Flints To Make A Fire"<br>
+      <span style="font-size:0.95rem; font-weight:400; color:var(--text-body);">— Louisa May Alcott</span>
+    </p>
 
-      <p>Donating to a cause is such a remarkable deed that can not and should not be taken for granted.</p>
-
-      <p>A formidable network of donors coming together towards a cause can produce unimaginable current and energy required to make the necessary difference in the world we live in.</p>
-
-      <p>To this extent, we commend donors around the world, who have consistently displayed commitments to help change negative prevalence in the world we live in.</p>
-
-      <p>The WCiA Donors' Roundtable is the gathering of both corporate and individual donors, contributing towards achieving equitable social investments in the world's children in Africa, in order to help the vulnerable children realize their rights and potentials enough to enable them contribute to Africa's socio-political and economic growth and thus enable Africa reap the benefits of her children.</p>
+    <div class="info-box reveal">
+      <div class="info-box-icon">📊</div>
+      <div class="info-box-body">
+        <div class="label">The Fact</div>
+        <p>Charitable initiatives survive primarily on donations; and private philanthropy is now a growing source of funding for international projects, with the landscape of local/international development assistance changing significantly – with the private/corporate sector support to development and humanitarian assistance being found to be increasingly important within this changing landscape, even as this support has been in decline – in spite of their capacities to immensely contribute to development and humanitarian assistance in a more effective way.</p>
+      </div>
     </div>
-    <a href="join-roundtable.html" class="btn btn-maroon" style="margin-top:10px;">Click to Join Donors Round Table</a>
+
+    <div class="info-box reveal">
+      <div class="info-box-icon">💡</div>
+      <div class="info-box-body">
+        <div class="label">The Truth</div>
+        <p>Donating to a cause is such a remarkable deed that can not and should not be taken for granted. A formidable network of donors coming together towards a cause can produce unimaginable current and energy required to make the necessary difference in the world we live in.</p>
+      </div>
+    </div>
+
+    <div class="info-box reveal">
+      <div class="info-box-icon">❤</div>
+      <div class="info-box-body">
+        <div class="label">From Our Heart</div>
+        <p>We commend donors around the world, who have consistently displayed commitments to help change negative prevalence in the world we live in.</p>
+      </div>
+    </div>
+
+    <div class="info-box cream reveal">
+      <div class="info-box-icon">📣</div>
+      <div class="info-box-body">
+        <div class="label">The Call</div>
+        <p>The WCiA Donors' Roundtable is our clarion call for the gathering of corporate and individual donors, contributing towards achieving equitable social investments in the world's children in Africa, in order to help the vulnerable children realize their rights and potentials enough to enable them contribute to Africa's socio-political and economic growth and thus enable Africa reap the benefits of her children.</p>
+      </div>
+    </div>
+
+    <a href="join-roundtable.html" class="btn btn-maroon reveal" style="margin-top:10px;">Click to Join Donors Round Table</a>
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="cta-banner reveal">
   <div class="eyebrow">MAKE A DIFFERENCE TODAY</div>
   <h2>Ready to Invest in Africa's Children?</h2>
   <p>Reach out to us today and we will guide you through the donation process. Every penny counts.</p>
@@ -119,6 +141,24 @@
       }
     });
   });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  (function () {
+    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(t => t.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(t => observer.observe(t));
+  })();
 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ways to Partner / Support — WCiA Project</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -55,9 +55,9 @@
 
 <section class="section">
   <div class="container">
-    <p>You can support the critical health, education, and other development needs of the millions of poor and vulnerable children in Africa in any of the following ways. Support in one or more ways is always welcome.</p>
+    <p class="reveal">You can support the critical health, education, and other development needs of the millions of poor and vulnerable children in Africa in any of the following ways. Support in one or more ways is always welcome.</p>
 
-    <div class="partner-list">
+    <div class="partner-list reveal-group">
       <div class="partner-item">
         <div class="partner-num">1</div>
         <div>
@@ -109,7 +109,7 @@
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="cta-banner reveal">
   <div class="eyebrow">MAKE A DIFFERENCE TODAY</div>
   <h2>Ready to Invest in Africa's Children?</h2>
   <p>Reach out to us today and we will guide you through the donation process. Every penny counts.</p>
@@ -153,6 +153,24 @@
       }
     });
   });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  (function () {
+    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(t => t.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(t => observer.observe(t));
+  })();
 </script>
 </body>
 </html>

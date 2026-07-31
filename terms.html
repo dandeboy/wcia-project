@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Use — WCiA Project</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -51,7 +51,7 @@
   <p>Effective Date: May 03, 2025</p>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <div class="container">
     <div class="prose">
       <p>Welcome to the <strong>World's Children in Africa (WCiA) Project</strong> website. By accessing and using <a href="https://wciaproject.org" style="color:var(--maroon);">https://wciaproject.org</a> (the "Site"), you agree to comply with and be bound by the following Terms of Use. If you do not agree, please do not use the Site.</p>
@@ -133,6 +133,24 @@
       }
     });
   });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  (function () {
+    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(t => t.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(t => observer.observe(t));
+  })();
 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Our Cause-Related Product — WCiA Project</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -54,35 +54,63 @@
 </section>
 
 <section class="section">
-  <div class="container funds-grid" style="align-items:start;">
-    <div class="prose">
-      <p>Consequent to the child-focused investment objective of the World's Children in Africa (WCiA) Project, is this cause-related gift product known as the <strong>"Children's Writing Companion – for world's children in Africa"</strong>.</p>
-      <p>The product is an educative writing material, loaded with health, education, child protection &amp; other child development messages (with pictures), to help prepare the children to be well receptive of child-focused programs targeted towards their development by humanitarian service delivery agencies and organizations.</p>
-      <p>This product is also a unique innovation meant to afford individuals and corporate entities the opportunity to participate and help provide the much needed support to the poor and vulnerable world's children in Africa and thus also participating in the United Nations' Sustainable Development Goals initiative in Africa.</p>
+  <div class="container" style="max-width:900px;">
 
-      <p style="font-weight:700; margin-bottom:10px;">The Companion is Ideal for Donation/Gifting To:</p>
-      <ul class="bullets">
-        <li>Children between ages 4–16</li>
-        <li>Schools</li>
-        <li>Child Care Providers</li>
-        <li>NGOs</li>
-        <li>Parents/Guardians</li>
-        <li>Teachers/Instructors</li>
-      </ul>
+    <div class="info-box reveal">
+      <div class="info-box-icon">🎁<span class="num">1</span></div>
+      <div class="info-box-body">
+        <div class="label">The Product</div>
+        <p>Consequent to the child-focused investment objective of the World's Children in Africa (WCiA) Project, is this cause-related gift product – the <strong>"Children's Writing Companion – for world's children in Africa"</strong>.</p>
+      </div>
+    </div>
 
-      <p>A gift of this companion to a child in Africa, will enable that child become enlightened and better oriented to not becoming a casualty of some critical health, education, and other disaster that can hinder his/her integration, survival and development.</p>
+    <div class="info-box reveal">
+      <div class="info-box-icon">📖<span class="num">2</span></div>
+      <div class="info-box-body">
+        <div class="label">What It Is</div>
+        <p>The product is an educative writing material, loaded with health, education, child protection &amp; other child development messages (with pictures), to help prepare the children to be well receptive of child-focused programs targeted towards their development by humanitarian service delivery agencies and organizations.</p>
+      </div>
     </div>
-    <div class="funds-image">
-      <img src="https://wciaproject.org/wp-content/uploads/2022/11/children-writing-scaled.jpeg" alt="Children's Writing Companion">
+
+    <div class="info-box reveal">
+      <div class="info-box-icon">🌍<span class="num">3</span></div>
+      <div class="info-box-body">
+        <div class="label">What's More</div>
+        <p>This product avails individuals and corporate entities the opportunity to participate and help provide the much needed support to the poor and vulnerable world's children in Africa; and also enable them participate in the United Nations' Sustainable Development Goals (SDG) initiative in Africa.</p>
+      </div>
     </div>
+
+    <div class="info-box cream reveal">
+      <div class="info-box-icon">✅<span class="num">4</span></div>
+      <div class="info-box-body">
+        <div class="label">Ideal for Donation/Gifting To</div>
+        <ul class="bullets">
+          <li>Children between ages 4–16</li>
+          <li>Schools</li>
+          <li>Child Care Providers</li>
+          <li>NGOs</li>
+          <li>Parents/Guardians</li>
+          <li>Teachers/Instructors</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-box reveal">
+      <div class="info-box-icon">⭐<span class="num">5</span></div>
+      <div class="info-box-body">
+        <div class="label">It's Impact</div>
+        <p>A gift of this companion to a child in Africa, will enable that child become enlightened and better oriented to not becoming a casualty of some critical health, education, and other disaster that can hinder his/her integration, survival and development.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="section section-cream">
+<section class="section section-cream reveal">
   <div class="container">
     <h2 style="margin-bottom:6px;">How This Product Works</h2>
     <p>A gift of this Children's Companion, to any one child, goes beyond being just a book gift.</p>
-    <div class="steps-grid">
+    <div class="steps-grid reveal-group">
       <div class="step-card">
         <div class="step-num">01</div>
         <h3>You Buy a Product</h3>
@@ -108,7 +136,7 @@
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="cta-banner reveal">
   <div class="eyebrow">MAKE A DIFFERENCE TODAY</div>
   <h2>Ready to Invest in Africa's Children?</h2>
   <p>Reach out to us today and we will guide you through the donation process. Every penny counts.</p>
@@ -152,6 +180,24 @@
       }
     });
   });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  (function () {
+    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(t => t.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(t => observer.observe(t));
+  })();
 </script>
 </body>
 </html>
