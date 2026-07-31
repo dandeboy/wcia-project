@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Our Events — WCiA Project</title>
 <link rel="stylesheet" href="style.css?v=6">
+<noscript><style>.reveal,.reveal-group>*,.reveal-left,.reveal-right,.reveal-zoom,.reveal-fade,.reveal-group-alt>*{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 
@@ -112,7 +113,7 @@
 
   // Scroll-reveal: fade + rise elements into view as the user scrolls.
   (function () {
-    const targets = document.querySelectorAll('.reveal, .reveal-group');
+    const targets = document.querySelectorAll('.reveal, .reveal-group, .reveal-left, .reveal-right, .reveal-zoom, .reveal-fade, .reveal-group-alt');
     if (!('IntersectionObserver' in window) || targets.length === 0) {
       targets.forEach(t => t.classList.add('visible'));
       return;
